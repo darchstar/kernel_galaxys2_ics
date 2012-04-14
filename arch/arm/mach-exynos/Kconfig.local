@@ -14,6 +14,9 @@ config TARGET_LOCALE_KOR
 config TARGET_LOCALE_NAATT_TEMP
 	bool "NAGSM"
 
+config TARGET_LOCALE_NA
+	bool "NA"
+
 config TARGET_LOCALE_EUR_U1_NFC
 	bool "Europe Open NFC"
 
@@ -38,6 +41,8 @@ config MACH_U1_KOR_KT
 
 config MACH_U1_KOR_LGT
 	bool "LG U+"
+
+
 endchoice
 
 choice
@@ -53,6 +58,19 @@ config MACH_C1_KOR_KT
 
 config MACH_C1_KOR_LGT
 	bool "LG U+"
+endchoice
+
+choice
+        prompt "U1 for Epic Touch"
+        depends on MACH_U1 && TARGET_LOCALE_NA
+        default MACH_U1_NA_USCC_REV05
+
+config MACH_U1_NA_SPR_EPIC2_REV00
+	bool "Epic SPR"
+
+config MACH_U1_NA_USCC_REV05
+	bool "Epic USCC"
+
 endchoice
 
 choice
